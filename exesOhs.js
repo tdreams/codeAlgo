@@ -40,6 +40,14 @@ function XO(str) {
   return count.x === count.o;
 }
 
+function XO(str) {
+  char = str.toLowerCase().split("");
+  return (
+    char.filter((x) => x === "x").length ===
+    char.filter((o) => o === "o").length
+  );
+}
+
 console.log(XO("xo"));
 console.log(XO("xooxx"));
 console.log(XO("ooxXm"));
