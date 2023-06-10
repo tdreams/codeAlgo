@@ -8,3 +8,7 @@ const reverseSeq = (n) => {
   }
   return arr;
 };
+
+const reverseSeq2 = (n) => {
+  return [...Array(n)].map((_, i) => n - i);
+};
