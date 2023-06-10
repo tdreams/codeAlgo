@@ -1,4 +1,4 @@
-05 / 26 / 2023;
+//05 / 26 / 2023;
 /* Write function bmi that calculates body mass index (bmi = weight / height2).
 
 if bmi <= 18.5 return "Underweight"
