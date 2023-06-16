@@ -18,3 +18,16 @@ const sumOfEvenNumbers = (arr) => {
 
 console.log(sumOfEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 console.log(sumOfEvenNumbers([1, 3, 5, 7, 9]));
+
+const reverseWords = (str) => {
+  const words = str.split(" ");
+  const reverseWords = words.map((word) => word.split("").reverse().join(""));
+  return reverseWords.join(" ");
+};
+console.log(reverseWords("Hello, World!"));
+
+function digitize(n) {
+  return Array.from(String(n), Number).reverse();
+}
+
+console.log(digitize(35231));
