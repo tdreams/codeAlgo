@@ -22,26 +22,18 @@ humanYearsCatYearsDogYears(10), [10,56,64])*/
 var humanYearsCatYearsDogYears = function (humanYears) {
   let dogYears;
   let catYears;
+  const forfirstYearsecond = 15 + 9;
   if (humanYears === 1) {
     dogYears = 15;
     catYears = dogYears;
   }
   if (humanYears === 2) {
-    dogYears = 15+9;
+    dogYears = 15 + 9;
     catYears = dogYears;
+  } else {
+    dogYears = forfirstYearsecond + (humanYears - 2) * 5;
+    catYears = forfirstYearsecond + (humanYears - 2) * 4;
   }
-  for (let i = 3; i<humanYears; i++) {
-    if (humanYears >= i){
-        dogYears+=3 
-  }
-  for (let i = 4; i<humanYears; i++) {
-    if (humanYears >= i){
-        dogYears+=4 
-  }
-  
-  }
-  return [0, 0, 0];
-
+  return [humanYears, catYears, dogYears];
 };
-
-console.log(humanYearsCatYearsDogYears(1));
+console.log(humanYearsCatYearsDogYears(10));
