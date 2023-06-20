@@ -8,3 +8,11 @@ const getAge = (inputString) => {
   return parseInt(inputString[0]);
 };
 console.log(getAge("4 years old"));
+
+function noSpace(x) {
+  return x
+    .split(" ")
+    .map((elt) => elt)
+    .join("");
+}
+console.log(noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"));
