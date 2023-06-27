@@ -27,13 +27,6 @@ const rgb = (r, g, b) => {
   r = Math.max(0, Math.min(255, r));
   g = Math.max(0, Math.min(255, g));
   b = Math.max(0, Math.min(255, b));
-  const componentToHex = (c) => {
-    const hex = c.toString(16);
-    return hex.length === 1 ? "0" + hex : hex;
-  };
-  const red = componentToHex(r);
-  const green = componentToHex(g);
-  const blue = componentToHex(b);
 
   return (red + green + blue).toUpperCase();
 };
