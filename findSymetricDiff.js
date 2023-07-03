@@ -5,32 +5,30 @@ Symmetric difference is a binary operation, which means it operates on only two 
 Create a function that takes two or more arrays and returns an array of their symmetric difference. The returned array must contain only unique values (no duplicates). */
 
 function sym(...args) {
-  const uniqueValues = [];
-
-  const isUnique = (arr, element) => {
-    for (const el of arr) {
-      if (el === element) {
-        return false;
-      }
-    }
-    return true;
-  };
   const symDiffOfTwoArrays = (arr1, arr2) => {
+    const result = [];
+
     for (const element of arr1) {
-      if (!arr2.includes(element) && isUnique(uniqueValues, element)) {
-        uniqueValues.push(element);
+      if (!arr2.includes(element) && !result.includes(element)) {
+        result.push(element);
       }
     }
+
     for (const element of arr2) {
-      if (!arr1.includes(element) && isUnique(uniqueValues, element)) {
-        uniqueValues.push(element);
+      if (!arr1.includes(element) && !result.includes(element)) {
+        result.push(element);
       }
     }
+
+    return result;
   };
-  for (let i = 0; i < args.length - 1; i++) {
-    symDiffOfTwoArrays(args[i], args[i + 1]);
+
+  let result = args[0];
+  for (let i = 1; i < args.length; i++) {
+    result = symDiffOfTwoArrays(result, args[i]);
   }
-  return uniqueValues;
+
+  return result;
 }
 
 sym([1, 2, 3], [5, 2, 1, 4]);
