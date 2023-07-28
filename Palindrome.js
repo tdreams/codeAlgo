@@ -9,3 +9,4 @@ function isPalindrome(s) {
   const reversed = formatted.split("").reverse().join("");
   return formatted === reversed;
 }
+//
