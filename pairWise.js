@@ -33,3 +33,28 @@ const pairwise = (arr, arg) => {
 };
 
 pairwise([1, 4, 2, 3, 0, 5], 7);
+
+function pairwise(arr, arg) {
+  let total = 0;
+  const hashTable = {};
+
+  for (let idx = 0; idx < arr.length; idx++) {
+    const num = arr[idx];
+    const target = arg - num;
+
+    if (hashTable.hasOwnProperty(target) && hashTable[target] !== null) {
+      total += idx + hashTable[target];
+      // Mark the indices as used to avoid reusing elements
+      hashTable[idx] = null;
+      hashTable[hashTable[target]] = null;
+    } else {
+      // Store the current index for the current number in the hash table
+      hashTable[num] = idx;
+    }
+  }
+
+  return total;
+}
+
+// Example usage:
+console.log(pairwise([7, 9, 11, 13, 15], 20)); // Output: 6
